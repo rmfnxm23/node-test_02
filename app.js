@@ -39,11 +39,20 @@ app.set("views", "./views");
 //   res.send("Hello World!");
 // });
 
+// // URL 경로와 그에 따라 렌더링되는 템플릿
+// app.get("/test", (req, res) => {
+//   res.render("test");
+// });
+// app.get("/test2", (req, res) => {
+//   res.render("test2");
+// });
+
+// // form 전송 실습>>>>>
 // app.get("/", (req, res) => {
 //   res.render("main");
 // });
 
-// // req : request 요청
+// // req : request 요청  // res : response 응답
 // app.get("/getForm", (req, res) => {
 //   // get 요청은 무조건 req.query
 //   console.log(req.query, "요청 왔니?");
@@ -55,6 +64,7 @@ app.set("views", "./views");
 //   console.log(req.body, "요청 왔니?");
 //   res.render("result", { title: "POST 요청결과", userinfo: req.body });
 // });
+// // form 전송 실습>>>>>
 
 // // form 활용하여 유저 추가 하기>>>
 // // 전역변수
@@ -83,28 +93,7 @@ app.set("views", "./views");
 // });
 // // form 활용하여 유저 추가 하기>>>
 
-// app.get("/test", (req, res) => {
-//   res.render("test");
-// });
-
-// app.get("/test2", (req, res) => {
-//   res.render("test2");
-// });
-
-// axios
-// app.get("/", (req, res) => {
-//   res.render("axios");
-// });
-// app.get("/axiosget", (req, res) => {
-//   console.log(req.query, "abc");
-//   res.send({ title: "왔다!" });
-// });
-// app.post("/axiospost", (req, res) => {
-//   console.log(req.body, "abc");
-//   res.send({ title: "왔다!" });
-// });
-
-// 실습 페이지 이동 연습>>>>>
+// url 페이지 이동 연습>>>>>
 // app.get("/", (req, res) => {
 //   res.render("page_main");
 // });
@@ -135,57 +124,59 @@ app.set("views", "./views");
 //   console.log("요청 왔어");
 //   res.render("asfmaskf125", { title: "page5입니다." });
 // });
+// url 페이지 이동 연습>>>>>
 
-// 실습 페이지 이동 연습>>>>>
-
-// // axios 실습>>>>>
+// // axios 전송 테스트>>>>>
 // app.get("/", (req, res) => {
-//   // res.render("practice_axios_post_login");
-//   res.render("practice_axios_get_join");
+//   res.render("axios");
 // });
-// // 실습1. axios get 회원가입
 // app.get("/axiosget", (req, res) => {
 //   console.log(req.query, "abc");
-//   res.send({ title: "회원가입되셨습니다." });
+//   res.send({ title: "왔다!" });
 // });
-
-// // 회원가입에서 로그인으로 연결
-// app.get("/login", (req, res) => {
-//   res.render("practice_axios_post_login");
-// });
-
-// // 보안적인 이유로 서버는 비교 작업만 수행한 후 로그인 성공 여부를 응답으로 클라이언트에 반환합니다.
-
-// // 하드코딩된 로그인 정보
-// const ser_id = "가나다";
-// const ser_pw = "123";
-
-// // 로그인 요청 처리
 // app.post("/axiospost", (req, res) => {
-//   const { id, pw } = req.body; // 클라이언트로부터 받은 로그인 데이터
-
-//   // 로그인 정보 비교
-//   if (id === ser_id && pw === ser_pw) {
-//     res.send({ success: true, message: "로그인 성공!" });
-//   } else {
-//     res.send({
-//       success: false,
-//       message: "아이디나 비밀번호가 잘못되었습니다.",
-//     });
-//   }
+//   console.log(req.body, "abc");
+//   res.send({ title: "왔다!" });
 // });
-// // axios 실습>>>>>
+// // axios 전송 테스트>>>>>
 
-// multer 수업>>>>>
+// axios 실습>>>>>
 app.get("/", (req, res) => {
-  res.render("multer_main");
+  // res.render("practice_axios_post_login");
+  res.render("practice_axios_get_join");
 });
-app.post("/upload", upload.single("files"), (req, res) => {
-  console.log(req.file, "파일");
-  console.log(req.body, "잘 담겼니?");
-  // res.send(req.file.filename); //응답을 해주지 않으면 로딩이 계속 됨.
-  res.render("check", { url: `uploads/${req.file.filename}` });
+// 실습1. axios get 회원가입
+app.get("/axiosget", (req, res) => {
+  console.log(req.query, "abc");
+  res.send({ title: "회원가입되셨습니다." });
 });
+
+// 회원가입에서 로그인으로 연결
+app.get("/login", (req, res) => {
+  res.render("practice_axios_post_login");
+});
+
+// 보안적인 이유로 서버는 비교 작업만 수행한 후 로그인 성공 여부를 응답으로 클라이언트에 반환합니다.
+
+// 하드코딩된 로그인 정보
+const ser_id = "가나다";
+const ser_pw = "123";
+
+// 로그인 요청 처리
+app.post("/axiospost", (req, res) => {
+  const { id, pw } = req.body; // 클라이언트로부터 받은 로그인 데이터
+
+  // 로그인 정보 비교
+  if (id === ser_id && pw === ser_pw) {
+    res.send({ success: true, message: "로그인 성공!" });
+  } else {
+    res.send({
+      success: false,
+      message: "아이디나 비밀번호가 잘못되었습니다.",
+    });
+  }
+});
+// axios 실습>>>>>
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

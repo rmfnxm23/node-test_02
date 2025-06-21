@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
+    <h3>axios 전송 테스트</h3>
     <button onclick="onClick()">axios 요청하기</button>
   </body>
 </html>
@@ -18,7 +19,7 @@
   };
 
   // axios 요청 테스트
-  const onClick = () => {
+  const onClick = async () => {
     // axios({
     //   method: "get",
     //   url: "/axiosget",
@@ -26,12 +27,32 @@
     // }).then((res) => {
     //   console.log(res, "뭐라고 나오니?");
     // });
-    axios({
+
+    // axios({
+    //   method: "post",
+    //   url: "/axiospost",
+    //   data: data,
+    // }).then((res) => {
+    //   console.log(res, "뭐라고 나오니?");
+    // });
+
+    // 기본 형태 : axios().then(()=>{});
+    // axios() : request 즉, 요청을 보내는 부분 ( 호출하는 부분 )
+    // axios( { method:'', url: '', data: '', params: '' } ) : data와 params는 필수 x
+    // method = form 전송 방법 ( get, post )
+    // url = 요청할 주소 / 호출할 주소 ( 누구 )
+    // data / params = 요청 내용 / 전달할 내용
+    // .then(()=>{}) : response 부분 즉, 요청에 대한 응답을 받는 부분
+    // .then(function(){})
+    // (인자)=>{} = '인자' = 호출한 곳에서 보낸 응답의 총집합
+    // 응답 = 인자 = 데이터 + 응답 결과 + 오류메세지
+    // 인자.data => 내가 요청한 곳에서 보내는 "데이터"
+
+    var a = await axios({
       method: "post",
       url: "/axiospost",
       data: data,
-    }).then((res) => {
-      console.log(res, "뭐라고 나오니?");
     });
+    console.log(a);
   };
 </script>
