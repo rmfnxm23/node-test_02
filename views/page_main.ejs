@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- window.location.href 근본
+     a href 나를 기준. 주소를 오픈했으니 타고 넘어갈수 있음. -->
+    <!-- <button onclick="pageMove('1')">1페이지</button>
+    <button onclick="pageMove('2')">2페이지</button>
+    <button onclick="pageMove('')">3페이지</button>
+    <button onclick="pageMove('')">4페이지</button>
+    <button onclick="pageMove('')">5페이지</button>
+    <button onclick="pageMove('')">6페이지</button>
+    <button onclick="pageMove('')">7페이지</button>
+    <button onclick="pageMove('')">8페이지</button>
+    <button onclick="pageMove('')">9페이지</button>
+    <button onclick="pageMove('')">10페이지</button>
+    <button onclick="pageMove('')">11페이지</button>
+    <button onclick="pageMove('')">12페이지</button>
+    <button onclick="pageMove('')">13페이지</button>
+    <button onclick="pageMove('')">14페이지</button>
+    <button onclick="pageMove('')">15페이지</button>
+    <button onclick="pageMove('')">16페이지</button>
+    <button onclick="pageMove('')">17페이지</button>
+    <button onclick="pageMove('')">18페이지</button>
+    <button onclick="pageMove('')">19페이지</button>
+    <button onclick="pageMove('')">20페이지</button> -->
+    <div class="box"></div>
+  </body>
+  <script>
+    // const pageMove = (page) => {
+    //   // 페이지를 렌더링해줄 수 없음
+    //   // 데이터만 주고 받기 위해 사용함
+    //   axios({
+    //     method: "get",
+    //     url: "/page1",
+    //   }).then((res) => {
+    //     window.location.href("/page");
+    //   });
+    // };
+
+    // const data = [1, 2, 3, 4, 5];
+    const data = [
+      "asfmaskf125",
+      "asd2",
+      "akdwdk1",
+      "ajjhhjas5555",
+      "adwwasga6",
+    ];
+
+    // 버튼 동적으로 만들기
+    const box = document.querySelector(".box");
+    const page_btn = data
+      .map((data, num) => {
+        return `<button onclick="pageMove('${data}')"> ${
+          num + 1
+        }페이지</button>`;
+      })
+      .join(" ");
+
+    box.innerHTML = page_btn;
+
+    const pageMove = (data) => {
+      //   window.location.href = "/page1";
+      // window.location.href = `http://localhost:3000/page${data}`;
+      window.location.href = `http://localhost:3000/${data}`;
+    };
+  </script>
+</html>

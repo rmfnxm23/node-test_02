@@ -1,0 +1,95 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
+
+/* Container for centering the content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 12px; /* Rounded corners */
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  color: #444;
+}
+
+/* Link styling */
+.home-link {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+.home-link:hover {
+  color: #0056b3;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensures border radius is respected */
+}
+
+thead {
+  background-color: #a8dadc; /* Pastel color for the header */
+  color: white;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  font-size: 1.1em;
+  border: 1px solid #ddd;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+
+/* Style for the table body */
+tbody.tbody_table {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Horizontal line styling */
+hr {
+  margin: 20px 0;
+  border: 1px solid #ddd;
+}

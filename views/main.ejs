@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <!-- <body>
+    <h3>form 전송 실습</h3>
+    <h4>GET 요청</h4>
+    <form action="/getForm" method="get">
+      <input type="text" placeholder="id를 입력해 주세요" name="id" required />
+      <input
+        type="password"
+        placeholder="password 입력해 주세요"
+        name="pw"
+        required
+      />
+      <button type="submit">GET 등록</button>
+    </form>
+
+    <hr />
+
+    <h4>POST 요청</h4>
+    <form action="/postForm" method="post">
+      <input type="text" placeholder="id를 입력해 주세요" name="id" required />
+      <input
+        type="password"
+        placeholder="password 입력해 주세요"
+        name="pw"
+        required
+      />
+      <button type="submit">POST 등록</button>
+    </form>
+  </body> -->
+  <body>
+    <div class="container">
+      <h3>폼 전송 실습</h3>
+      <div class="form-section">
+        <h4>회원정보 확인</h4>
+        <form action="/getForm" method="get">
+          <input
+            type="text"
+            placeholder="회원 검색"
+            name="user"
+            required
+            class="input-field"
+          />
+          <button type="submit" class="submit-btn">회원정보 보기</button>
+        </form>
+      </div>
+
+      <hr />
+
+      <div class="form-section">
+        <h4>회원정보 등록</h4>
+        <form action="/postForm" method="post">
+          <input
+            type="text"
+            placeholder="이름을 입력해 주세요"
+            name="username"
+            required
+            class="input-field"
+          />
+          <input
+            type="number"
+            placeholder="나이를 입력해 주세요"
+            name="userage"
+            required
+            class="input-field"
+          />
+          <input
+            type="email"
+            placeholder="이메일을 입력해 주세요"
+            name="email"
+            required
+            class="input-field"
+          />
+          <input
+            type="password"
+            placeholder="password 입력해 주세요"
+            name="pw"
+            required
+            class="input-field"
+          />
+          <button type="submit" class="submit-btn">회원정보 등록</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
